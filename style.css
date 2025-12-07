@@ -1,0 +1,124 @@
+/* GLOBAL STYLE */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #f6faf4;
+    color: #2c3e50;
+    line-height: 1.7;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    background: #4CAF50;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #3e9442;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+                url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1500&q=80');
+    background-size: cover;
+    background-position: center;
+    padding: 150px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: clamp(16px, 3vw, 22px);
+    margin: 20px auto 35px;
+    max-width: 600px;
+}
+
+/* SECTIONS */
+section {
+    padding: 70px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+h2 {
+    font-size: clamp(26px, 4vw, 36px);
+    margin-bottom: 25px;
+}
+
+/* FEATURES */
+.features .feature {
+    background: white;
+    padding: 30px;
+    margin: 20px 0;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+}
+
+.features .feature h3 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.features .feature p {
+    margin: 0;
+}
+
+/* GRID RESPONSIVE (lebih canggih) */
+@media (min-width: 768px) {
+    .features {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .features .feature {
+        height: 100%;
+    }
+}
+
+@media (min-width: 1100px) {
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* DOWNLOAD */
+.download {
+    background: #e9f7ee;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.download p {
+    margin-bottom: 25px;
+}
+
+/* FOOTER */
+.footer {
+    padding: 25px;
+    text-align: center;
+    background: #2c3e50;
+    color: white;
+    font-size: 14px;
+}
+
+.footer a {
+    color: #80e27e;
+    text-decoration: none;
+}
