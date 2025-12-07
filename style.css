@@ -1,10 +1,12 @@
-/* --- GLOBAL --- */
+/* ============================
+   GLOBAL
+============================ */
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: "Poppins", sans-serif;
     background: #eef5ea;
     color: #233;
-    transition: 0.4s;
+    transition: 0.3s;
 }
 
 .dark {
@@ -12,7 +14,9 @@ body {
     color: #f1f1f1;
 }
 
-/* --- GLASSMORPHISM --- */
+/* ============================
+   GLASS EFFECT
+============================ */
 .glass {
     background: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(14px);
@@ -21,7 +25,14 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
-/* --- NEUMORPHISM CARD --- */
+.dark .glass {
+    background: rgba(20, 20, 20, 0.45);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* ============================
+   NEOMORPHISM CARDS
+============================ */
 .neo {
     background: #e9f2e6;
     border-radius: 20px;
@@ -39,7 +50,9 @@ body {
     box-shadow: 8px 8px 18px #0f100f, -8px -8px 18px #303430;
 }
 
-/* --- NAVBAR --- */
+/* ============================
+   NAVBAR
+============================ */
 .navbar {
     position: fixed;
     top: 0;
@@ -51,27 +64,83 @@ body {
     z-index: 50;
 }
 
+/* Light mode navbar */
+.navbar.glass {
+    background: rgba(255, 255, 255, 0.45);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Dark mode navbar */
+.dark .navbar.glass {
+    background: rgba(15, 15, 15, 0.55);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .nav-link {
     margin: 0 10px;
     text-decoration: none;
-    color: inherit;
     font-weight: 600;
+    color: inherit;
+    transition: 0.3s;
 }
 
+.nav-link:hover {
+    opacity: 0.7;
+}
+
+.dark .nav-link {
+    color: #e8e8e8;
+}
+
+/* Dropdown & Toggle */
 .lang-select, .toggle-btn {
     margin-left: 12px;
     padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.3);
+    background: rgba(255,255,255,0.7);
 }
 
-/* --- HERO --- */
+.dark .lang-select, .dark .toggle-btn {
+    background: rgba(40,40,40,0.5);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ============================
+   HERO SECTION
+============================ */
 .hero {
-    padding: 160px 20px 120px;
+    position: relative;
+    padding: 180px 20px 140px;
     text-align: center;
     color: white;
-    background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+    background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1500&q=80') no-repeat center/cover;
+    border-radius: 0 0 25px 25px;
 }
 
-/* --- SECTION --- */
+/* Overlay untuk meningkatkan kontras teks */
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1;
+}
+
+.dark .hero::after {
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.hero .hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* ============================
+   SECTIONS
+============================ */
 .section {
     padding: 90px 20px;
     max-width: 1000px;
@@ -82,7 +151,9 @@ body {
     text-align: center;
 }
 
-/* --- FEATURES GRID --- */
+/* ============================
+   FEATURES GRID
+============================ */
 .features-grid {
     display: grid;
     gap: 25px;
@@ -94,7 +165,9 @@ body {
     }
 }
 
-/* --- BUTTON --- */
+/* ============================
+   BUTTON
+============================ */
 .btn {
     display: inline-block;
     padding: 14px 28px;
@@ -110,7 +183,13 @@ body {
     background: #2d7f36;
 }
 
-/* --- FOOTER --- */
+.dark .btn {
+    background: #4caf50;
+}
+
+/* ============================
+   FOOTER
+============================ */
 .footer {
     text-align: center;
     padding: 25px;
@@ -118,18 +197,17 @@ body {
 }
 
 .footer a {
-    color: #6bdc72;          /* warna hijau neon lembut */
+    color: #6bdc72;
     font-weight: 600;
     text-decoration: none;
     transition: 0.3s;
 }
 
 .footer a:hover {
-    color: #4caf50;          /* hijau lebih gelap saat hover */
+    color: #4caf50;
     text-decoration: underline;
 }
 
-/* versi dark mode */
 .dark .footer a {
     color: #9af7a0;
 }
