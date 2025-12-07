@@ -1,217 +1,350 @@
 /* ============================
-   GLOBAL
-============================ */
-body {
-    margin: 0;
-    font-family: "Poppins", sans-serif;
-    background: #eef5ea;
-    color: #233;
-    transition: 0.3s;
+   AKURASI PUPUK - STYLE.CSS
+   Premium | Brand Green | Dark Mode
+   ============================ */
+
+/* ---------- VARIABLES (colors) ---------- */
+:root{
+    --primary-green: #2E7D32;    /* brand primary */
+    --accent-green:  #4CAF50;    /* hover / accent */
+    --leaf-pastel:   #E8F5E9;    /* light background */
+    --bg-light:      #F6FBF6;
+    --text-dark:     #1e2b20;
+    --muted:         #6b7b6b;
+    --glass-border:  rgba(255,255,255,0.35);
+    --card-shadow:   rgba(46,125,50,0.08);
 }
 
-.dark {
-    background: #1a1c1a;
-    color: #f1f1f1;
+/* Dark theme overrides */
+body.dark{
+    --primary-green: #9AF7A0;
+    --accent-green:  #66d56c;
+    --leaf-pastel:   #121412;
+    --bg-light:      #0f120f;
+    --text-dark:     #eef6ee;
+    --muted:         #9aa79a;
+    --glass-border:  rgba(255,255,255,0.08);
+    --card-shadow:   rgba(0,0,0,0.45);
 }
 
-/* ============================
-   GLASS EFFECT
-============================ */
-.glass {
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.35);
+/* ---------- BASE ---------- */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+    margin:0;
+    font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg, var(--bg-light) 0%, #f1f6f1 100%);
+    color: var(--text-dark);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    transition: background 0.35s, color 0.35s;
+    line-height:1.6;
+    font-size:16px;
 }
 
-.dark .glass {
-    background: rgba(20, 20, 20, 0.45);
-    border-color: rgba(255, 255, 255, 0.1);
+/* Utility center */
+.center-text{text-align:center}
+.section{padding:72px 20px; max-width:1100px; margin: auto}
+a{color:inherit}
+
+/* ---------- NAVBAR ---------- */
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:12px 26px;
+    gap:16px;
+    z-index:100;
+    transition: background 0.35s, box-shadow 0.35s, border 0.35s;
 }
 
-/* ============================
-   NEOMORPHISM CARDS
-============================ */
-.neo {
-    background: #e9f2e6;
-    border-radius: 20px;
-    padding: 25px;
-    box-shadow: 10px 10px 20px #cbd7c7, -10px -10px 20px #ffffff;
-    transition: 0.3s;
+/* glass nav */
+.navbar.glass{
+    background: rgba(255,255,255,0.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+    border-radius: 0 0 14px 14px;
 }
 
-.neo:hover {
-    transform: translateY(-5px);
+/* when dark, navbar darker */
+body.dark .navbar.glass{
+    background: rgba(18,18,18,0.55);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
 }
 
-.dark .neo {
-    background: #232623;
-    box-shadow: 8px 8px 18px #0f100f, -8px -8px 18px #303430;
+/* logo */
+.logo{
+    font-weight:700;
+    font-size:18px;
+    letter-spacing:0.2px;
+    color:var(--primary-green);
 }
 
-/* ============================
-   NAVBAR
-============================ */
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 14px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 50;
+/* nav menu */
+.nav-menu{display:flex; gap:12px; align-items:center}
+.nav-link{
+    text-decoration:none;
+    padding:8px 10px;
+    border-radius:8px;
+    color:var(--text-dark);
+    font-weight:600;
+    transition: background 0.25s, color 0.25s, transform 0.2s;
 }
+.nav-link:hover{background:rgba(0,0,0,0.04); transform:translateY(-2px)}
+body.dark .nav-link{color:var(--text-dark)} /* in dark, var--text-dark = light */
 
-/* Light mode navbar */
-.navbar.glass {
-    background: rgba(255, 255, 255, 0.45);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+/* nav tools */
+.nav-tools{display:flex; gap:10px; align-items:center}
+.toggle-btn, .lang-select {
+    padding:8px 10px;
+    border-radius:8px;
+    border:1px solid rgba(0,0,0,0.08);
+    background:rgba(255,255,255,0.85);
+    cursor:pointer;
+    font-weight:600;
 }
-
-/* Dark mode navbar */
-.dark .navbar.glass {
-    background: rgba(15, 15, 15, 0.55);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.nav-link {
-    margin: 0 10px;
-    text-decoration: none;
-    font-weight: 600;
-    color: inherit;
-    transition: 0.3s;
-}
-
-.nav-link:hover {
-    opacity: 0.7;
-}
-
-.dark .nav-link {
-    color: #e8e8e8;
-}
-
-/* Dropdown & Toggle */
-.lang-select, .toggle-btn {
-    margin-left: 12px;
-    padding: 6px 10px;
-    border-radius: 8px;
-    border: 1px solid rgba(0,0,0,0.3);
-    background: rgba(255,255,255,0.7);
-}
-
-.dark .lang-select, .dark .toggle-btn {
+body.dark .toggle-btn, body.dark .lang-select{
     background: rgba(40,40,40,0.5);
-    color: white;
-    border: 1px solid rgba(255,255,255,0.2);
+    color:var(--text-dark);
+    border:1px solid rgba(255,255,255,0.06);
 }
 
-/* ============================
-   HERO SECTION
-============================ */
-.hero {
-    position: relative;
-    padding: 180px 20px 140px;
-    text-align: center;
-    color: white;
-    background: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1500&q=80') no-repeat center/cover;
-    border-radius: 0 0 25px 25px;
+/* responsive nav collapse for small screens */
+@media(max-width:760px){
+    .nav-menu{display:none}
 }
 
-/* Overlay untuk meningkatkan kontras teks */
-.hero::after {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.35);
-    z-index: 1;
+/* ---------- HERO ---------- */
+.hero{
+    margin-top:74px; /* give space for fixed navbar */
+    position:relative;
+    padding:140px 18px 120px;
+    border-radius:0 0 30px 30px;
+    overflow:hidden;
+    background-image: url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1600&q=80');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
 
-.dark .hero::after {
-    background: rgba(0, 0, 0, 0.45);
+/* overlay for contrast */
+.hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: linear-gradient(180deg, rgba(20,20,20,0.28) 0%, rgba(0,0,0,0.34) 100%);
+    z-index:1;
+    transition: background 0.25s;
+}
+body.dark .hero::after{
+    background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.6) 100%);
 }
 
-.hero .hero-content {
-    position: relative;
-    z-index: 2;
+/* hero content container */
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:920px;
+    text-align:center;
+    color: #fff;
+    padding: 0 18px;
 }
 
-/* ============================
-   SECTIONS
-============================ */
-.section {
-    padding: 90px 20px;
-    max-width: 1000px;
-    margin: auto;
+/* hero heading */
+.hero-content h1{
+    font-size:clamp(28px, 5vw, 54px);
+    margin:0 0 12px;
+    font-weight:800;
+    letter-spacing:0.2px;
+    color: #fff;
+    text-shadow: 0 8px 30px rgba(0,0,0,0.45);
 }
 
-.center-text {
-    text-align: center;
+/* hero sub */
+.hero-content p{
+    font-size:clamp(15px, 2.2vw, 19px);
+    margin:0 0 26px;
+    max-width:820px;
+    margin-left:auto;
+    margin-right:auto;
+    color:rgba(255,255,255,0.95);
 }
 
-/* ============================
-   FEATURES GRID
-============================ */
-.features-grid {
-    display: grid;
-    gap: 25px;
+/* hero button */
+.btn{
+    display:inline-block;
+    padding:12px 22px;
+    background: linear-gradient(180deg, var(--primary-green), var(--accent-green));
+    color:#fff;
+    font-weight:700;
+    border-radius:12px;
+    text-decoration:none;
+    box-shadow: 0 10px 30px rgba(46,125,50,0.16);
+    transition: transform 0.18s, box-shadow 0.18s;
+}
+.btn:hover{ transform:translateY(-4px); box-shadow: 0 18px 40px rgba(46,125,50,0.22) }
+body.dark .btn{ box-shadow: 0 10px 30px rgba(46,125,50,0.26) }
+
+/* ---------- SECTIONS ---------- */
+.section h2{ font-size:clamp(22px,3.6vw,30px); margin-bottom:14px; color:var(--text-dark) }
+.section p{ color:var(--muted); max-width:900px; margin:auto 0 }
+
+/* ---------- FEATURES GRID ---------- */
+.features-grid{
+    display:grid;
+    gap:22px;
+    margin-top:26px;
+}
+@media(min-width:900px){
+    .features-grid{ grid-template-columns: repeat(3, 1fr); }
+}
+@media(min-width:760px) and (max-width:899px){
+    .features-grid{ grid-template-columns: repeat(2, 1fr); }
 }
 
-@media (min-width: 768px) {
-    .features-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+/* neo card (neumorphism) */
+.neo{
+    padding:24px;
+    border-radius:18px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(245,250,245,0.85));
+    box-shadow: 10px 10px 24px rgba(209,219,210,0.6), -10px -10px 24px rgba(255,255,255,0.85);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+.neo h3{ margin-top:0; color:var(--primary-green) }
+.neo p{ color:var(--muted) }
+
+.neo:hover{ transform: translateY(-8px); box-shadow: 12px 18px 40px rgba(46,125,50,0.12) }
+
+body.dark .neo{
+    background: linear-gradient(180deg, rgba(28,28,28,0.55), rgba(22,22,22,0.55));
+    box-shadow: 8px 8px 18px rgba(0,0,0,0.6), -8px -8px 18px rgba(40,40,40,0.3);
+}
+body.dark .neo h3{ color: var(--primary-green) }
+body.dark .neo p{ color: var(--muted) }
+
+/* ---------- CONTACT PREMIUM ---------- */
+.contact-premium{
+    position:relative;
+    padding-top:60px;
+    padding-bottom:100px;
+    border-radius: 16px;
+    overflow:visible;
+    margin-top:20px;
+    background: linear-gradient(135deg, #E8F5E9 0%, #F5FFF7 100%);
 }
 
-/* ============================
-   BUTTON
-============================ */
-.btn {
-    display: inline-block;
-    padding: 14px 28px;
-    background: #3fa34d;
-    color: white;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
+/* dots pattern */
+.dots-pattern{
+    position:absolute;
+    width:320px;
+    height:320px;
+    right:-40px;
+    top:-40px;
+    background-image: radial-gradient(var(--primary-green) 1.6px, transparent 1.6px);
+    background-size: 20px 20px;
+    opacity:0.32;
+    transform: rotate(12deg);
+    pointer-events:none;
+}
+body.dark .dots-pattern{
+    background-image: radial-gradient(var(--accent-green) 1.6px, transparent 1.6px);
+    opacity:0.14;
 }
 
-.btn:hover {
-    background: #2d7f36;
+/* contact container/cards */
+.contact-container{
+    display:flex;
+    gap:28px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:28px;
+}
+.contact-card.premium{
+    width:280px;
+    padding:28px;
+    border-radius:20px;
+    text-align:center;
+    background: rgba(255,255,255,0.28);
+    border:1px solid rgba(255,255,255,0.65);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 12px 28px rgba(46,125,50,0.12);
+    transition: transform 0.28s, box-shadow 0.28s, border-color 0.28s;
+}
+.contact-card.premium:hover{
+    transform: translateY(-10px);
+    border-color: var(--accent-green);
+    box-shadow: 0 22px 50px rgba(46,125,50,0.18), inset 0 0 20px rgba(255,255,255,0.06);
+}
+.contact-card.premium h3{ margin:12px 0 8px; color:var(--primary-green); font-weight:700 }
+.contact-link{ color:var(--primary-green); font-weight:700; text-decoration:none }
+.contact-link:hover{ color:var(--accent-green); text-decoration:underline }
+
+/* feather icon style */
+.contact-icon{
+    width:48px;
+    height:48px;
+    display:inline-block;
+    color:var(--primary-green);
+    opacity:0.95;
 }
 
-.dark .btn {
-    background: #4caf50;
+/* dark */
+body.dark .contact-premium{
+    background: linear-gradient(135deg, #121412 0%, #0F120F 100%);
+}
+body.dark .contact-card.premium{
+    background: rgba(20,20,20,0.56);
+    border:1px solid rgba(255,255,255,0.06);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+}
+body.dark .contact-card.premium h3,
+body.dark .contact-icon,
+body.dark .contact-link{ color: var(--primary-green) }
+
+/* ---------- FOOTER ---------- */
+.footer{
+    padding:34px 20px;
+    text-align:center;
+    background: transparent;
+    color:var(--muted);
+}
+.footer a{
+    color: var(--primary-green);
+    font-weight:700;
+    text-decoration:none;
+}
+.footer a:hover{ color:var(--accent-green); text-decoration:underline }
+
+/* ---------- GLASS (generic) ---------- */
+.glass{
+    border-radius:12px;
+    border:1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
 }
 
-/* ============================
-   FOOTER
-============================ */
-.footer {
-    text-align: center;
-    padding: 25px;
-    margin-top: 40px;
+/* ---------- RESPONSIVE ADJUSTMENTS ---------- */
+@media(max-width:760px){
+    .hero{ padding:120px 16px 90px; background-position: center 30% }
+    .contact-card.premium{ width:100%; max-width:420px; margin:auto }
+    .section{ padding:48px 16px }
+    .nav-tools{ gap:8px }
 }
 
-.footer a {
-    color: #6bdc72;
-    font-weight: 600;
-    text-decoration: none;
-    transition: 0.3s;
-}
+/* ---------- A11Y / FOCUS ---------- */
+a:focus, button:focus, select:focus{ outline: 3px solid rgba(46,125,50,0.18); outline-offset:2px }
 
-.footer a:hover {
-    color: #4caf50;
-    text-decoration: underline;
-}
+/* ---------- SMALL TWEAKS ---------- */
+p, li{ color:var(--muted); margin:0 0 12px 0 }
+h1,h2,h3{ color:var(--text-dark) }
+body.dark h1,h2,h3{ color:var(--text-dark) }
 
-.dark .footer a {
-    color: #9af7a0;
-}
-
-.dark .footer a:hover {
-    color: #66d56c;
-}
+/* ---------- END OF FILE ---------- */
