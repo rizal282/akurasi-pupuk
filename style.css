@@ -116,3 +116,24 @@ body {
     padding: 25px;
     margin-top: 40px;
 }
+
+.footer a {
+    color: #6bdc72;          /* warna hijau neon lembut */
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer a:hover {
+    color: #4caf50;          /* hijau lebih gelap saat hover */
+    text-decoration: underline;
+}
+
+/* versi dark mode */
+.dark .footer a {
+    color: #9af7a0;
+}
+
+.dark .footer a:hover {
+    color: #66d56c;
+}
