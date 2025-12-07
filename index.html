@@ -3,102 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akurasi Pupuk – Landing Page</title>
+    <title>Akurasi Pupuk – Premium Landing Page</title>
 
     <!-- GOOGLE FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <!-- AOS Animation -->
+    <!-- AOS ANIMATION -->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- NAVIGATION BAR -->
-    <nav class="navbar">
-        <div class="nav-left">Akurasi Pupuk</div>
+<!-- NAVBAR -->
+<nav class="navbar glass">
+    <div class="nav-left">
+        <span class="logo">Akurasi Pupuk</span>
+    </div>
+    <div class="nav-right">
+        <a href="#about" class="nav-link" data-lang="nav_about">Tentang</a>
+        <a href="#features" class="nav-link" data-lang="nav_features">Fitur</a>
+        <a href="#download" class="nav-link" data-lang="nav_download">Download</a>
 
-        <div class="nav-right">
-            <button id="lang-btn">EN</button>
-            <button id="darkmode-btn">🌙</button>
-        </div>
-    </nav>
+        <button id="darkToggle" class="toggle-btn">🌙</button>
 
-    <!-- HERO -->
-    <header class="hero">
-        <div class="hero-content" data-aos="fade-up">
-            <h1 data-lang-id="hero_title">Akurasi Pupuk</h1>
-            <p data-lang-id="hero_sub">
-                Perhitungan nutrisi tanaman yang lebih akurat, cepat, dan praktis.
-            </p>
-            <a class="btn" href="https://play.google.com/store/apps/details?id=com.apdev.akurasipupuk" target="_blank" data-lang-id="btn_download">
-                Download di Play Store
-            </a>
-        </div>
-    </header>
+        <select id="langSelect" class="lang-select">
+            <option value="id">ID</option>
+            <option value="en">EN</option>
+        </select>
+    </div>
+</nav>
 
-    <!-- ABOUT -->
-    <section class="about" data-aos="fade-up">
-        <h2 data-lang-id="about_title">Tentang Aplikasi</h2>
-        <p data-lang-id="about_text">
-            Akurasi Pupuk membantu petani modern, penghobi hidroponik, dan praktisi pertanian menghitung nutrisi tanaman secara cepat dan presisi.
-        </p>
-    </section>
-
-    <!-- FEATURES -->
-    <section class="features">
-        <h2 data-lang-id="feature_title" data-aos="fade-up">Fitur Utama</h2>
-
-        <div class="feature" data-aos="fade-left">
-            <h3 data-lang-id="f1_title">1. Perhitungan Manual Kadar Unsur</h3>
-            <p data-lang-id="f1_text">Masukkan nama pupuk, berat, dan kadar unsur. Aplikasi menghitung kadar unsur total setelah dicampur.</p>
-        </div>
-
-        <div class="feature" data-aos="fade-right">
-            <h3 data-lang-id="f2_title">2. Perhitungan Otomatis 130+ Data Pupuk</h3>
-            <p data-lang-id="f2_text">Pilih pupuk dari database bawaan, masukkan berat, dan dapatkan hasil perhitungan secara instan.</p>
-        </div>
-
-        <div class="feature" data-aos="fade-left">
-            <h3 data-lang-id="f3_title">3. Perhitungan PPM Lengkap</h3>
-            <p data-lang-id="f3_text">Hitung konsentrasi larutan, massa pupuk, atau volume air berdasarkan nilai PPM.</p>
-        </div>
-
-        <div class="feature" data-aos="fade-right">
-            <h3 data-lang-id="f4_title">4. Pengenceran PPM</h3>
-            <p data-lang-id="f4_text">Hitung konsentrasi awal, akhir, volume awal, atau volume akhir dengan cepat.</p>
-        </div>
-
-        <div class="feature" data-aos="fade-left">
-            <h3 data-lang-id="f5_title">5. Multi Pengenceran PPM</h3>
-            <p data-lang-id="f5_text">Campur beberapa larutan dan dapatkan nilai PPM akhir secara otomatis.</p>
-        </div>
-    </section>
-
-    <!-- DOWNLOAD -->
-    <section class="download" data-aos="zoom-in">
-        <h2 data-lang-id="dl_title">Download Sekarang</h2>
-        <p data-lang-id="dl_text">Optimalkan perhitungan nutrisi tanaman Anda.</p>
-        <a class="btn" href="https://play.google.com/store/apps/details?id=com.apdev.akurasipupuk" target="_blank" data-lang-id="btn_download">
+<!-- HERO -->
+<header class="hero glass" data-aos="fade-up">
+    <div class="hero-content">
+        <h1 data-lang="hero_title">Akurasi Pupuk</h1>
+        <p data-lang="hero_sub">Perhitungan nutrisi tanaman yang lebih akurat, cepat, dan praktis.</p>
+        <a class="btn" data-lang="btn_download" href="https://play.google.com/store/apps/details?id=com.apdev.akurasipupuk" target="_blank">
             Download di Play Store
         </a>
-    </section>
+    </div>
+</header>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p>© 2025 Akurasi Pupuk</p>
-        <a href="https://rizal282.github.io/privacy-policy-akurasi-pupuk/" target="_blank" data-lang-id="privacy">
-            Kebijakan Privasi
-        </a>
-    </footer>
+<!-- ABOUT -->
+<section id="about" class="section glass" data-aos="fade-up">
+    <h2 data-lang="about_title">Tentang Aplikasi</h2>
+    <p data-lang="about_desc">
+        Akurasi Pupuk membantu petani modern dan praktisi pertanian menghitung nutrisi tanaman secara cepat dan presisi.
+    </p>
+</section>
 
-    <!-- AOS SCRIPT -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 900, once: true, offset: 60 });</script>
+<!-- FEATURES -->
+<section id="features" class="section">
+    <h2 class="center-text" data-lang="feature_title" data-aos="fade-up">Fitur Utama</h2>
 
-    <!-- LANGUAGE + DARKMODE SCRIPT -->
-    <script src="script.js"></script>
+    <div class="features-grid">
+        <div class="feature-card neo" data-aos="fade-left">
+            <h3>1. <span data-lang="f1_title">Perhitungan Manual Kadar Unsur</span></h3>
+            <p data-lang="f1_desc">Masukkan nama pupuk, berat, dan kadar unsur untuk mendapatkan total hasil campuran.</p>
+        </div>
+
+        <div class="feature-card neo" data-aos="fade-right">
+            <h3>2. <span data-lang="f2_title">Perhitungan Otomatis 130+ Pupuk</span></h3>
+            <p data-lang="f2_desc">Gunakan database pupuk bawaan untuk perhitungan cepat tanpa input manual.</p>
+        </div>
+
+        <div class="feature-card neo" data-aos="fade-left">
+            <h3>3. <span data-lang="f3_title">Perhitungan PPM Lengkap</span></h3>
+            <p data-lang="f3_desc">Hitung konsentrasi larutan, massa pupuk, atau volume air berdasarkan PPM.</p>
+        </div>
+
+        <div class="feature-card neo" data-aos="fade-right">
+            <h3>4. <span data-lang="f4_title">Pengenceran PPM</span></h3>
+            <p data-lang="f4_desc">Hitung konsentrasi awal, akhir, volume awal, atau volume akhir dengan cepat.</p>
+        </div>
+
+        <div class="feature-card neo" data-aos="fade-left">
+            <h3>5. <span data-lang="f5_title">Multi Pengenceran</span></h3>
+            <p data-lang="f5_desc">Campur beberapa larutan sekaligus dan dapatkan nilai PPM akhir otomatis.</p>
+        </div>
+    </div>
+</section>
+
+<!-- DOWNLOAD CTA -->
+<section id="download" class="section glass center-text" data-aos="zoom-in">
+    <h2 data-lang="dl_title">Download Sekarang</h2>
+    <p data-lang="dl_sub">Optimalkan perhitungan nutrisi tanaman Anda.</p>
+    <a class="btn" data-lang="btn_download" 
+       href="https://play.google.com/store/apps/details?id=com.apdev.akurasipupuk" target="_blank">
+       Download di Play Store
+    </a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer glass">
+    <p>© 2025 Akurasi Pupuk</p>
+    <a href="https://rizal282.github.io/privacy-policy-akurasi-pupuk/" target="_blank">Kebijakan Privasi</a>
+</footer>
+
+<!-- AOS SCRIPT -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init({ duration: 900, once: true });</script>
+
+<!-- SCRIPT DARK MODE + MULTI LANGUAGE -->
+<script src="script.js"></script>
 
 </body>
 </html>
