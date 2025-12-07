@@ -61,108 +61,139 @@
 </head>
 <body>
 
+<!-- NAVBAR -->
+<nav class="navbar glass">
+    <div class="logo">Akurasi Pupuk</div>
 
-    <!-- ================= NAVBAR ================= -->
-    <nav class="navbar glass">
-        <div class="logo">Akurasi Pupuk</div>
+    <div class="nav-menu">
+        <a href="#tentang" class="nav-link" data-text="lnk_about">Tentang</a>
+        <a href="#fitur" class="nav-link" data-text="lnk_features">Fitur</a>
+        <a href="#contact" class="nav-link" data-text="lnk_contact">Kontak</a>
+        <a href="#download" class="nav-link" data-text="lnk_download">Download</a>
+    </div>
 
-        <div class="nav-menu">
-            <a href="#tentang" class="nav-link" data-text="lnk_about">Tentang</a>
-            <a href="#fitur" class="nav-link" data-text="lnk_features">Fitur</a>
-            <a href="#download" class="nav-link" data-text="lnk_download">Download</a>
-        </div>
+    <div class="nav-tools">
+        <button id="toggleDark" class="toggle-btn">🌙</button>
+        <select id="langSelect" class="lang-select">
+            <option value="id">ID</option>
+            <option value="en">EN</option>
+        </select>
+    </div>
+</nav>
 
-        <div class="nav-tools">
-            <button id="toggleDark" class="toggle-btn">🌙</button>
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1 data-text="hero_title">Akurasi Pupuk</h1>
+        <p data-text="hero_sub">Perhitungan nutrisi tanaman lebih akurat, cepat, dan modern.</p>
 
-            <select id="langSelect" class="lang-select">
-                <option value="id">ID</option>
-                <option value="en">EN</option>
-            </select>
-        </div>
-    </nav>
-
-    <!-- ================= HERO ================= -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1 data-text="hero_title">Akurasi Pupuk</h1>
-            <p data-text="hero_sub">
-                Perhitungan nutrisi tanaman lebih akurat, cepat, dan modern.
-            </p>
-
-            <a href="https://play.google.com/store/apps/details?id=com.apdev.akurasipupuk" class="btn" data-text="btn_download">
-                Download di Play Store
-            </a>
-        </div>
-    </section>
-
-    <!-- ================= TENTANG ================= -->
-    <section class="section" id="tentang">
-        <h2 class="center-text" data-text="about_title">Tentang Aplikasi</h2>
-        <p class="center-text" data-text="about_desc">
-            Aplikasi Akurasi Pupuk membantu petani menghitung nutrisi pupuk dengan presisi tinggi untuk meningkatkan produktivitas tanaman.
-        </p>
-    </section>
-
-    <!-- ================= FITUR ================= -->
-    <section class="section" id="fitur">
-        <h2 class="center-text" data-text="features_title">Fitur Unggulan</h2>
-
-        <div class="features-grid">
-
-            <div class="neo" data-aos="fade-up">
-                <h3 data-text="f1_title">Hitung Manual</h3>
-                <p data-text="f1_desc">Hitung kadar nutrisi pupuk campuran berdasarkan input manual.</p>
-            </div>
-
-            <div class="neo" data-aos="fade-up" data-aos-delay="100">
-                <h3 data-text="f2_title">Hitung Otomatis</h3>
-                <p data-text="f2_desc">Tersedia 130+ daftar pupuk lengkap dengan unsur hara.</p>
-            </div>
-
-            <div class="neo" data-aos="fade-up" data-aos-delay="200">
-                <h3 data-text="f3_title">Hitung PPM</h3>
-                <p data-text="f3_desc">Cari konsentrasi larutan, massa pupuk, atau volume air.</p>
-            </div>
-
-            <div class="neo" data-aos="fade-up" data-aos-delay="300">
-                <h3 data-text="f4_title">Pengenceran PPM</h3>
-                <p data-text="f4_desc">Hitung konsentrasi awal, akhir, volume awal, dan volume akhir.</p>
-            </div>
-
-            <div class="neo" data-aos="fade-up" data-aos-delay="400">
-                <h3 data-text="f5_title">Multi Pengenceran PPM</h3>
-                <p data-text="f5_desc">Gabungkan beberapa larutan untuk mencari PPM akhir.</p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ================= DOWNLOAD ================= -->
-    <section class="section center-text" id="download">
-        <h2 data-text="download_title">Download Sekarang</h2>
-        <a href="https://play.google.com/store/apps/details?id=com.apdev.akurasipupuk" class="btn" data-text="btn_download2">
+        <a href="https://play.google.com/store/apps/details?id=com.apdev.akurasipupuk" class="btn" data-text="btn_download">
             Download di Play Store
         </a>
-    </section>
+    </div>
+</section>
 
-    <!-- ================= FOOTER ================= -->
-    <footer class="footer">
-        <a href="https://rizal282.github.io/privacy-policy-akurasi-pupuk/" target="_blank">
-            Kebijakan Privasi
-        </a>
-        <br><br>
-        <p>© 2025 Akurasi Pupuk - DRD Digital Pertanian Dev</p>
-    </footer>
+<!-- TENTANG -->
+<section class="section" id="tentang">
+    <h2 class="center-text" data-text="about_title">Tentang Aplikasi</h2>
+    <p class="center-text" data-text="about_desc">
+        Aplikasi Akurasi Pupuk membantu petani menghitung nutrisi pupuk dengan presisi tinggi untuk meningkatkan produktivitas tanaman.
+    </p>
+</section>
 
-    <!-- ================= JS ================= -->
-    <script src="script.js"></script>
+<!-- FITUR -->
+<section class="section" id="fitur">
+    <h2 class="center-text" data-text="features_title">Fitur Unggulan</h2>
 
-    <!-- AOS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init();</script>
+    <div class="features-grid">
+
+        <div class="neo" data-aos="fade-up">
+            <h3 data-text="f1_title">Hitung Manual</h3>
+            <p data-text="f1_desc">Hitung nutrisi pupuk campuran dengan input manual.</p>
+        </div>
+
+        <div class="neo" data-aos="fade-up" data-aos-delay="100">
+            <h3 data-text="f2_title">Hitung Otomatis</h3>
+            <p data-text="f2_desc">130+ data pupuk lengkap beserta unsur hara.</p>
+        </div>
+
+        <div class="neo" data-aos="fade-up" data-aos-delay="200">
+            <h3 data-text="f3_title">Hitung PPM</h3>
+            <p data-text="f3_desc">Menghitung konsentrasi larutan berdasarkan massa & volume.</p>
+        </div>
+
+        <div class="neo" data-aos="fade-up" data-aos-delay="300">
+            <h3 data-text="f4_title">Pengenceran PPM</h3>
+            <p data-text="f4_desc">Hitung konsentrasi awal/akhir & volume larutan.</p>
+        </div>
+
+        <div class="neo" data-aos="fade-up" data-aos-delay="400">
+            <h3 data-text="f5_title">Multi Pengenceran PPM</h3>
+            <p data-text="f5_desc">Menggabungkan beberapa larutan untuk mendapatkan PPM akhir.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT PREMIUM -->
+<section class="section contact-premium" id="contact">
+
+    <div class="dots-pattern"></div>
+
+    <h2 class="center-text" data-text="contact_title">Hubungi Kami</h2>
+    <p class="center-text contact-sub" data-text="contact_sub">
+        Jika Anda memiliki pertanyaan, saran, atau kendala terkait Akurasi Pupuk, silakan hubungi kami.
+    </p>
+
+    <div class="contact-container">
+
+        <div class="contact-card premium" data-aos="fade-up">
+            <i data-feather="mail" class="contact-icon"></i>
+            <h3>Email</h3>
+            <a href="mailto:yourmail@gmail.com" class="contact-link">yourmail@gmail.com</a>
+        </div>
+
+        <div class="contact-card premium" data-aos="fade-up" data-aos-delay="150">
+            <i data-feather="message-circle" class="contact-icon"></i>
+            <h3>WhatsApp</h3>
+            <a href="https://wa.me/6281234567890" class="contact-link">+62 812-3456-7890</a>
+        </div>
+
+        <div class="contact-card premium" data-aos="fade-up" data-aos-delay="300">
+            <i data-feather="instagram" class="contact-icon"></i>
+            <h3>Instagram</h3>
+            <a href="https://instagram.com/username" class="contact-link">@username</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- DOWNLOAD -->
+<section class="section center-text" id="download">
+    <h2 data-text="download_title">Download Sekarang</h2>
+    <a href="https://play.google.com/store/apps/details?id=com.apdev.akurasipupuk" class="btn" data-text="btn_download2">
+        Download di Play Store
+    </a>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <a href="https://rizal282.github.io/privacy-policy-akurasi-pupuk/" target="_blank">
+        Kebijakan Privasi
+    </a>
+    <p>© 2025 Akurasi Pupuk</p>
+</footer>
+
+<!-- JS -->
+<script src="script.js"></script>
+
+<!-- Feather Icons -->
+<script src="https://unpkg.com/feather-icons"></script>
+<script>feather.replace();</script>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
 
 </body>
 </html>
-
-
